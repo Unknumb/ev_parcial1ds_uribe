@@ -76,3 +76,19 @@ tabla_maestra_primaria:
   save_args:
     index: False
     encoding: utf-8
+
+
+    # --- CAPA 08: REPORTING (REPORTES FINALES) ---
+reporte_desercion:
+  type: pandas.CSVDataset
+  filepath: data/08_reporting/reporte_desercion.csv
+  save_args:
+    index: False
+    encoding: utf-8
+
+reporte_rendimiento:
+  type: pandas.CSVDataset
+  filepath: data/08_reporting/reporte_rendimiento.csv
+  save_args:
+    index: False
+    encoding: utf-8
