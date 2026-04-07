@@ -4,19 +4,75 @@
 # Link: https://docs.kedro.org/en/stable/catalog-data/introduction/#data-catalog
 
 
-# Capa 01: Datos Crudos (Raw)
+## --- CAPA 01: DATOS CRUDOS (RAW) ---
 estudiantes_raw:
   type: pandas.CSVDataset
   filepath: data/01_raw/estudiantes.csv
+  load_args:
+    encoding: utf-8
 
 asistencia_raw:
   type: pandas.CSVDataset
   filepath: data/01_raw/asistencia.csv
+  load_args:
+    encoding: utf-8
 
 calificaciones_raw:
   type: pandas.CSVDataset
-  filepath: data/01_raw/calificaciones.csv 
+  filepath: data/01_raw/calificaciones.csv
+  load_args:
+    encoding: utf-8
 
 inscripciones_raw:
   type: pandas.CSVDataset
   filepath: data/01_raw/inscripciones.csv
+  load_args:
+    encoding: utf-8
+
+
+# --- CAPA 02: DATOS LIMPIOS (INTERMEDIATE) ---
+estudiantes_limpio:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/estudiantes_limpio.csv
+  load_args:
+    encoding: utf-8
+  save_args:
+    index: False # vita que Pandas guarde una columna extra al principio llamada Unnamed: 0 con los números de las filas, lo cual arruinaría tus cruces más adelante.
+    encoding: utf-8 #Obliga a que tanto el guardado como la lectura hablen exactamente el mismo idioma, ignorando lo que dicte Windows.
+
+asistencia_limpio:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/asistencia_limpio.csv
+  load_args:
+    encoding: utf-8
+  save_args:
+    index: False
+    encoding: utf-8
+
+calificaciones_limpio:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/calificaciones_limpio.csv
+  load_args:
+    encoding: utf-8
+  save_args:
+    index: False
+    encoding: utf-8
+
+inscripciones_limpio:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/inscripciones_limpio.csv
+  load_args:
+    encoding: utf-8
+  save_args:
+    index: False
+    encoding: utf-8
+
+# --- CAPA 03: DATOS PRIMARIOS (TABLA MAESTRA) ---
+tabla_maestra_primaria:
+  type: pandas.CSVDataset
+  filepath: data/03_primary/tabla_maestra.csv
+  load_args:
+    encoding: utf-8
+  save_args:
+    index: False
+    encoding: utf-8
