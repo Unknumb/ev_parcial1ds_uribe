@@ -39,6 +39,9 @@ estudiantes_limpio:
   save_args:
     index: False # vita que Pandas guarde una columna extra al principio llamada Unnamed: 0 con los números de las filas, lo cual arruinaría tus cruces más adelante.
     encoding: utf-8 #Obliga a que tanto el guardado como la lectura hablen exactamente el mismo idioma, ignorando lo que dicte Windows.
+  fs_args:
+    open_args_save:
+      encoding: utf-8
 
 asistencia_limpio:
   type: pandas.CSVDataset
@@ -48,6 +51,9 @@ asistencia_limpio:
   save_args:
     index: False
     encoding: utf-8
+  fs_args:
+    open_args_save:
+      encoding: utf-8
 
 calificaciones_limpio:
   type: pandas.CSVDataset
@@ -57,6 +63,9 @@ calificaciones_limpio:
   save_args:
     index: False
     encoding: utf-8
+  fs_args:
+    open_args_save:
+      encoding: utf-8
 
 inscripciones_limpio:
   type: pandas.CSVDataset
@@ -66,6 +75,9 @@ inscripciones_limpio:
   save_args:
     index: False
     encoding: utf-8
+  fs_args:
+    open_args_save:
+      encoding: utf-8
 
 # --- CAPA 03: DATOS PRIMARIOS (TABLA MAESTRA) ---
 tabla_maestra_primaria:
@@ -76,6 +88,9 @@ tabla_maestra_primaria:
   save_args:
     index: False
     encoding: utf-8
+  fs_args:
+    open_args_save:
+      encoding: utf-8
 
 
     # --- CAPA 08: REPORTING (REPORTES FINALES) ---
@@ -85,6 +100,9 @@ reporte_desercion:
   save_args:
     index: False
     encoding: utf-8
+  fs_args:
+    open_args_save:
+      encoding: utf-8
 
 reporte_rendimiento:
   type: pandas.CSVDataset
@@ -92,3 +110,6 @@ reporte_rendimiento:
   save_args:
     index: False
     encoding: utf-8
+  fs_args:
+    open_args_save:
+      encoding: utf-8
