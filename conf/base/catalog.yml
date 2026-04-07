@@ -2,3 +2,21 @@
 #
 # Documentation for this file format can be found in "The Data Catalog"
 # Link: https://docs.kedro.org/en/stable/catalog-data/introduction/#data-catalog
+
+
+# Capa 01: Datos Crudos (Raw)
+estudiantes_raw:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/estudiantes.csv
+
+asistencia_raw:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/asistencia.csv
+
+calificaciones_raw:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/calificaciones.csv 
+
+inscripciones_raw:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/inscripciones.csv
